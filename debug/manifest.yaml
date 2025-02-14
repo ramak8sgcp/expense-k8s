@@ -1,0 +1,9 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: degug 
+  namespace: expense
+spec:
+  containers:
+  - name: debug
+    image: ramak8sgcp/debug:v1
