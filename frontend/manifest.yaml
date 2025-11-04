@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ramak8sgcp/debug:v1
+        image: ramak8sgcp/frontend
         resources:
           requests:
             cpu: 100m
