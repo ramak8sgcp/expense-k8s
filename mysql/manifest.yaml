@@ -49,5 +49,5 @@ spec:
   - name: mysql-port
     protocol: TCP
     port: 3306
-    targetPort: 80
+    targetPort: 3306
       
