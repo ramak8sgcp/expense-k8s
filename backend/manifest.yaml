@@ -32,6 +32,9 @@ spec:
       containers:
       - name: backend
         image: ramak8sgcp/backend:v1
+        envFrom: 
+        - configMapRef:
+            name: backend
 
 ---
 kind: Service
