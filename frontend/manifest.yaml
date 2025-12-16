@@ -24,13 +24,6 @@ spec:
       containers:
       - name: frontend
         image: ramak8sgcp/frontend:v1
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 100m
-            memory: 128Mi
 ---
 apiVersion: v1 
 kind: Service 
@@ -48,18 +41,18 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 80
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler 
-metadata:
-  name: frontend
-  namespace: expense
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment 
-    name: frontend 
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 15 # usually 75% in real environment.
+# ---
+# apiVersion: autoscaling/v1
+# kind: HorizontalPodAutoscaler 
+# metadata:
+#   name: frontend
+#   namespace: expense
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment 
+#     name: frontend 
+#   minReplicas: 1
+#   maxReplicas: 10
+#   targetCPUUtilizationPercentage: 15 # usually 75% in real environment.
 
